@@ -1,0 +1,43 @@
+#changelist-form {
+    transition: opacity 0.15s ease-in-out;
+}
+
+/* Delay the fade so fast responses don't flicker. */
+#changelist.realtime-search-loading #changelist-form {
+    opacity: 0.5;
+    transition-delay: 0.15s;
+}
+
+.realtime-search-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.realtime-search-filters {
+    margin-top: 6px;
+    font-size: 0.8125rem;
+    color: var(--body-quiet-color, #666);
+}
+
+.realtime-search-filters button {
+    margin: 0 2px;
+    padding: 1px 6px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background: var(--body-bg, #fff);
+    color: var(--link-fg, #447e9b);
+    font-family: monospace;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.realtime-search-filters button:hover {
+    background: var(--darkened-bg, #f8f8f8);
+}

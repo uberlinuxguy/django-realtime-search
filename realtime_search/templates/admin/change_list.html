@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+{% load static realtime_search %}
+{% comment %}
+  Extends the next "admin/change_list.html" in the template search path
+  (recursive extends), so custom changelist templates and other apps that
+  override it keep working.
+{% endcomment %}
+{% block extrahead %}
+{{ block.super }}
+{% realtime_search_config cl as realtime_search_config %}
+{% if realtime_search_config %}
+{{ realtime_search_config|json_script:"realtime-search-config" }}
+<link rel="stylesheet" href="{% static 'realtime_search/realtime_search.css' %}">
+<script src="{% static 'realtime_search/realtime_search.js' %}" defer></script>
+{% endif %}
+{% endblock %}
